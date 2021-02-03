@@ -1,0 +1,112 @@
+[
+    {
+        "Jeux_Id": "1",
+        "Jeux_Titre": "Final Fantasy XV",
+        "Jeux_Description": "Final Fantasy XV c'est pourri",
+        "Jeux_Prix": "79",
+        "Jeux_DateSortie": "2016-04-28",
+        "Jeux_PaysOrigine": "Japon",
+        "Jeux_Connexion": "Oui",
+        "Jeux_Mode": "singles",
+        "Genre_Id": "3"
+    },
+    {
+        "Jeux_Id": "2",
+        "Jeux_Titre": "Far Cry 6",
+        "Jeux_Description": "Far Cry 6",
+        "Jeux_Prix": "50",
+        "Jeux_DateSortie": "5041-02-05",
+        "Jeux_PaysOrigine": "USA",
+        "Jeux_Connexion": "Online",
+        "Jeux_Mode": "Solo",
+        "Genre_Id": "2"
+    },
+    {
+        "Jeux_Id": "3",
+        "Jeux_Titre": "Sea of Thieves",
+        "Jeux_Description": "Sea of Thieves",
+        "Jeux_Prix": "52.99",
+        "Jeux_DateSortie": "2017-11-28",
+        "Jeux_PaysOrigine": "USA",
+        "Jeux_Connexion": "Online",
+        "Jeux_Mode": "Multi-en-ligne",
+        "Genre_Id": "1"
+    },
+    {
+        "Jeux_Id": "4",
+        "Jeux_Titre": "Monster Hunter World",
+        "Jeux_Description": "Monster Hunter World",
+        "Jeux_Prix": "69.99",
+        "Jeux_DateSortie": "2017-06-21",
+        "Jeux_PaysOrigine": "Japon",
+        "Jeux_Connexion": "Online",
+        "Jeux_Mode": "Solo",
+        "Genre_Id": "3"
+    },
+    {
+        "Jeux_Id": "5",
+        "Jeux_Titre": "Dragon Ball FighterZ",
+        "Jeux_Description": "Dragon Ball FighterZ",
+        "Jeux_Prix": "49.99",
+        "Jeux_DateSortie": "2017-05-19",
+        "Jeux_PaysOrigine": "Japon",
+        "Jeux_Connexion": "Online",
+        "Jeux_Mode": "Solo",
+        "Genre_Id": "4"
+    },
+    {
+        "Jeux_Id": "6",
+        "Jeux_Titre": "A Way Out",
+        "Jeux_Description": "A Way Out",
+        "Jeux_Prix": "29.99",
+        "Jeux_DateSortie": "2017-12-08",
+        "Jeux_PaysOrigine": "USA",
+        "Jeux_Connexion": "Online",
+        "Jeux_Mode": "Multi-en-ligne",
+        "Genre_Id": "4"
+    },
+    {
+        "Jeux_Id": "7",
+        "Jeux_Titre": "Call of Duty WWII",
+        "Jeux_Description": "Call of Duty WWII",
+        "Jeux_Prix": "49.99",
+        "Jeux_DateSortie": "2018-02-02",
+        "Jeux_PaysOrigine": "USA",
+        "Jeux_Connexion": "Online",
+        "Jeux_Mode": "Solo",
+        "Genre_Id": "2"
+    },
+    {
+        "Jeux_Id": "8",
+        "Jeux_Titre": "Extinction",
+        "Jeux_Description": "Extinction",
+        "Jeux_Prix": "59.99",
+        "Jeux_DateSortie": "2018-05-18",
+        "Jeux_PaysOrigine": "USA",
+        "Jeux_Connexion": "Online",
+        "Jeux_Mode": "Solo",
+        "Genre_Id": "4"
+    },
+    {
+        "Jeux_Id": "9",
+        "Jeux_Titre": "Warhammer Vermintide 2",
+        "Jeux_Description": "Warhammer Vermintide 2",
+        "Jeux_Prix": "23.99",
+        "Jeux_DateSortie": "2017-03-18",
+        "Jeux_PaysOrigine": "USA",
+        "Jeux_Connexion": "Online",
+        "Jeux_Mode": "Solo",
+        "Genre_Id": "2"
+    },
+    {
+        "Jeux_Id": "10",
+        "Jeux_Titre": "Star Wars : Battlefront II",
+        "Jeux_Description": "Star Wars : Battlefront II",
+        "Jeux_Prix": "35",
+        "Jeux_DateSortie": "2017-06-17",
+        "Jeux_PaysOrigine": "Europe",
+        "Jeux_Connexion": "Online",
+        "Jeux_Mode": "Solo",
+        "Genre_Id": "2"
+    }
+]
