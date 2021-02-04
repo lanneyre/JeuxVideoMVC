@@ -1,4 +1,4 @@
-    <fieldset>
+    <fieldset class="card">
         <h2><!--Jeux_Titre--> <small><!--Jeux_Prix-->€</small></h2>
         <aside>
             <img src="img/<!--Jeux_Id-->.jpg" alt="">
@@ -13,3 +13,4 @@
             </p>
         </article>
     </fieldset>
+    <a href="index.php" class="retour">Retour à la liste</a>

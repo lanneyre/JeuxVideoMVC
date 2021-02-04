@@ -1,12 +1,14 @@
-body, fieldset{
+body{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
 }
 body{
     background-image: url("../img/bg.jpg");
-    background-position: top;
     background-size: cover;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 h1, h2, img{
     width: 100%;
@@ -21,10 +23,10 @@ h1{
     margin-right: 20px;
     padding: 10px;
     background-color: pink;
-    background-color: rgba(255,192,203, 0.5);
+    background-color: rgba(255,192,203, 0.8);
 }
-fieldset{
-    width: 25%;
+.card, .retour{
+    width: 70%;
     justify-content: space-between;
     border-radius: 10px;
     margin-bottom: 20px;
@@ -32,6 +34,8 @@ fieldset{
     /* background-color: rgba(87, 129, 23, 0.8); */
     color: darkblue;
     /* color: cyan; */
+    display: flex;
+    flex-wrap: wrap;
 }
 article{
     width: 55%;
@@ -47,9 +51,27 @@ span{
 small{
     float: right;
 }
+fieldset{
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    background-color: rgba(255, 255, 255, 0.8);
+    /* background-color: rgba(87, 129, 23, 0.8); */
+    color: darkblue;
+}
+.liste{
+    width: 50%;
+}
+.imagesJeux img{
+    width: 100%;
+    display: none;
+}
 
+.liste > fieldset:hover{
+    background-color: rgba(255,192,203, 0.8);
+}
 @media (max-width:900px){
-    fieldset{
+    .card{
         width: 100%;
     }
 }
