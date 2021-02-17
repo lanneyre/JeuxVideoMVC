@@ -73,4 +73,40 @@
             $data->execute();
             return $data->fetch(PDO::FETCH_OBJ);
         }
+
+        static function createJeu($jeu){
+            self::createConnexion();
+            try{
+                self::$conn->beginTransaction();
+                $sql = "INSERT INTO `jeux` ( `Jeux_Titre`, `Jeux_Description`, `Jeux_Prix`, `Jeux_DateSortie`, `Jeux_PaysOrigine`, `Jeux_Connexion`, `Jeux_Mode`, `Genre_Id`) VALUES (:Jeux_Titre, :Jeux_Description, :Jeux_Prix, :Jeux_DateSortie, :Jeux_PaysOrigine, :Jeux_Connexion, :Jeux_Mode, :Genre_Id)";
+                $req = self::$conn->prepare($sql);
+                
+                $req->bindValue(":Jeux_Titre", $jeu->Jeux_Titre);
+                $req->bindValue(":Jeux_Description", $jeu->Jeux_Description);
+                $req->bindValue(":Jeux_Prix", $jeu->Jeux_Prix);
+                $req->bindValue(":Jeux_DateSortie", $jeu->Jeux_DateSortie);
+                $req->bindValue(":Jeux_PaysOrigine", $jeu->Jeux_PaysOrigine);
+                $req->bindValue(":Jeux_Connexion", $jeu->Jeux_Connexion);
+                $req->bindValue(":Jeux_Mode", $jeu->Jeux_Mode);
+                $req->bindValue(":Genre_Id", $jeu->Genre_Id, PDO::PARAM_INT);
+
+                $req->execute();
+                
+                $jeu->Jeux_Id = self::$conn->lastInsertId();
+                $sqlP = "INSERT INTO `jeuxplateforme` (`Jeux_Id`, `Plateforme_Id`) VALUES (:Jeux_Id, :Plateforme_Id)";
+                $reqP = self::$conn->prepare($sqlP);
+                foreach($jeu->plateforme as $plateforme){
+                    $reqP->bindValue(":Jeux_Id", $jeu->Jeux_Id, PDO::PARAM_INT);
+                    $reqP->bindValue(":Plateforme_Id", $plateforme, PDO::PARAM_INT);
+                    $reqP->execute();
+                }
+                self::$conn->commit();
+                return true;
+            } catch(PDOException $e){
+                self::$conn->rollBack();
+                return false;
+            }
+            
+
+        }
     }
