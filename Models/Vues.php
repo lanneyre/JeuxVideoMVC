@@ -23,6 +23,23 @@
                     $ContentView .= $c;
                     // }
                     break;
+                case "insert":
+                    $listing = file_get_contents("Vues/insert.tpl");
+                    $listingPartTpl = file_get_contents("Vues/listing.part.tpl");
+                    $listingPart = "";
+                    $listingImg = "";
+                    foreach($data as $jeu){
+                        $c = str_replace("<!--Jeux_Titre-->", $jeu->Jeux_Titre, $listingPartTpl);
+                        $c = str_replace("<!--Jeux_Prix-->", $jeu->Jeux_Prix, $c);
+                        $c = str_replace("<!--Jeux_Id-->", $jeu->Jeux_Id, $c);
+                        $listingPart .= $c;
+                    }
+
+                    $ContentView = str_replace("<!--listingPart-->", $listingPart, $listing);
+                    //gestion des genres
+
+                    //gestion des plateformes
+                    break;
                 default:
                     $listing = file_get_contents("Vues/listing.tpl");
                     $listingPartTpl = file_get_contents("Vues/listing.part.tpl");
