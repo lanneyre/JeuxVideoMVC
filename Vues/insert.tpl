@@ -23,8 +23,10 @@
                 <option value="" disabled selected placeholder="Genre">Genre</option>
                 <!--listingGenre-->
             </select>
-            <label for="Genre_Id" class="allLigne">Plateformes</label>
-            <!--listingPlateforme-->
+            <label for="Genre_Id">Plateformes</label>
+            <div class="PlateformesListing">
+                <!--listingPlateforme-->
+            </div>
         </form>
     </fieldset>
     <fieldset>

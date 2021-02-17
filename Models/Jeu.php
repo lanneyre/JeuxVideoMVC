@@ -2,7 +2,7 @@
     class Jeu{
 
         static function getAllJeux(){
-            return Database::recupJeux();
+            return Database::getAll("jeux");
         }
 
         function hydrate($id){

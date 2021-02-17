@@ -28,7 +28,7 @@
                     $listingPartTpl = file_get_contents("Vues/listing.part.tpl");
                     $listingPart = "";
                     $listingImg = "";
-                    foreach($data as $jeu){
+                    foreach($data["jeux"] as $jeu){
                         $c = str_replace("<!--Jeux_Titre-->", $jeu->Jeux_Titre, $listingPartTpl);
                         $c = str_replace("<!--Jeux_Prix-->", $jeu->Jeux_Prix, $c);
                         $c = str_replace("<!--Jeux_Id-->", $jeu->Jeux_Id, $c);
@@ -37,8 +37,22 @@
 
                     $ContentView = str_replace("<!--listingPart-->", $listingPart, $listing);
                     //gestion des genres
-
+                    $genres = [];
+                    foreach($data["genres"] as $genre){
+                        $genres[] = "<option value='".$genre->Genre_Id."'>".$genre->Genre_Titre."</option>";
+                    }
+                    $ContentView = str_replace("<!--listingGenre-->", implode("", $genres), $ContentView);
                     //gestion des plateformes
+                    $plateformes = [];
+                    foreach($data["plateformes"] as $plateforme){
+                        $plateformes[] =<<<PLATEFORMES
+                        <div class="checkbox">
+                            <input type="checkbox" name="plateforme[]" id="Plateforme_$plateforme->Plateforme_Id" value="$plateforme->Plateforme_Id">
+                            <label for="Plateforme_$plateforme->Plateforme_Id">$plateforme->Plateforme_Nom</label>
+                        </div>
+PLATEFORMES;
+                    }
+                    $ContentView = str_replace("<!--listingPlateforme-->", implode("", $plateformes), $ContentView);
                     break;
                 default:
                     $listing = file_get_contents("Vues/listing.tpl");

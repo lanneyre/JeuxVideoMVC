@@ -86,6 +86,15 @@ label{
 .allLigne{
     width: 100%;
 }
+.PlateformesListing{
+    width: 60%;
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:space-around;
+}
+.checkbox{
+    width:33%;
+}
 @media (max-width:900px){
     .card{
         width: 100%;

@@ -27,6 +27,14 @@
             //return json_decode($data);
         }   
 
+        static function getAll($table){
+            self::createConnexion();
+
+            $sql = "SELECT * FROM `".$table."`";
+            $data = self::$conn->query($sql);
+            return $data->fetchAll(PDO::FETCH_OBJ);
+        }
+
         static function getJeuById($id){
             self::createConnexion();
 
@@ -44,6 +52,26 @@
             //     }
             // }
             // return null;
+        }
+
+        static function getGenreById($id){
+            self::createConnexion();
+
+            $sql = "SELECT * FROM `genre` WHERE `Genre_Id` = :genre_id LIMIT 1;";
+            $data = self::$conn->prepare($sql);
+            $data->bindValue(":genre_id", $id);
+            $data->execute();
+            return $data->fetch(PDO::FETCH_OBJ);
+        }
+
+        static function getPlateformeById($id){
+            self::createConnexion();
+
+            $sql = "SELECT * FROM `plateforme` WHERE `Plateforme_Id` = :plateforme_id LIMIT 1;";
+            $data = self::$conn->prepare($sql);
+            $data->bindValue(":plateforme_id", $id);
+            $data->execute();
+            return $data->fetch(PDO::FETCH_OBJ);
         }
 
         // static function getPicachu(){
