@@ -73,9 +73,4 @@
             $data->execute();
             return $data->fetch(PDO::FETCH_OBJ);
         }
-
-        // static function getPicachu(){
-        //     $data = file_get_contents("https://pokeapi.co/api/v2/pokemon/25");
-        //     return $data;
-        // }
     }

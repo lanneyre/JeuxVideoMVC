@@ -27,6 +27,9 @@
             <div class="PlateformesListing">
                 <!--listingPlateforme-->
             </div>
+            <div class="btns">
+                <input class="btn" type="submit" value="Insérer le nouveau jeu"> <input class="btn" type="reset" value="Reset">
+            </div>
         </form>
     </fieldset>
     <fieldset>
