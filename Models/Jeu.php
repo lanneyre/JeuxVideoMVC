@@ -71,6 +71,31 @@
 
         public function updateJeu(){
             $bdd = Database::updateJeu($this);
+            if(!empty($this->Jeux_Img)){
+                $erreurs = [];
+                if(!in_array($this->Jeux_Img["type"], Filemanager::$imgAutorise)){
+                    $erreurs[] = "Format d'image incorrect !";
+                }
+                if(isset($this->Jeux_Img["error"]) ){
+                    switch ($this->Jeux_Img['error']){
+                        case 1: // UPLOAD_ERR_INI_SIZE
+                        case 2: // UPLOAD_ERR_FORM_SIZE
+                            $erreurs[] = "Image trop grande !";
+                          break;
+                        case 3: // UPLOAD_ERR_PARTIAL
+                            $erreurs[] = "Image corrompu !";
+                          break;
+                        case 4: // UPLOAD_ERR_NO_FILE
+                            $erreurs[] = "Pas d'image";
+                          break;
+                      }
+                }
+
+                if(empty($erreurs) && $bdd){
+                    $saveImg = Filemanager::updateimg($this);
+                }
+            }
+            
         }
 
         static function getAllJeux(){

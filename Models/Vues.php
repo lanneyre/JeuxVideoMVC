@@ -107,6 +107,7 @@ PLATEFORMES;
                     $ContentView = str_replace("<!--Jeux_PaysOrigine-->", $data['jeu']->Jeux_PaysOrigine, $ContentView);
                     $ContentView = str_replace("<!--Jeux_Mode-->", $data['jeu']->Jeux_Mode, $ContentView);
                     $ContentView = str_replace("<!--Jeux_Connexion-->", $data['jeu']->Jeux_Connexion, $ContentView);
+                    $ContentView = str_replace("<!--Jeux_Img-->", Filemanager::$pathImg.$data['jeu']->Jeux_Id.".jpg", $ContentView);
                     break;
                 default:
                     $listing = file_get_contents("Vues/listing.tpl");

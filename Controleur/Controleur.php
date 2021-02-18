@@ -70,6 +70,11 @@
             unset($data['action']);
             $jeuToUpdate = new Jeu();
             $result = $jeuToUpdate->createJeu($data);
+            if(!empty($files['Jeux_Img']['tmp_name'])){
+                $jeuToUpdate->Jeux_Img = $files['Jeux_Img'];
+            } else {
+                $jeuToUpdate->Jeux_Img = "img";
+            }
             if($result === true){
                 $jeuToUpdate->updateJeu();
             }

@@ -11,7 +11,7 @@
     } elseif(!empty($_GET['page']) && $_GET['page'] == "insert"){
         Controleur::insert();
     } elseif(isset($_POST['action']) && $_POST['action'] == "update"){
-        Controleur::updatePOST($_POST);
+        Controleur::updatePOST($_POST, $_FILES);
     } elseif(!empty($_GET['idToUpdate'])){
         Controleur::update($_GET['idToUpdate']);
     }else {

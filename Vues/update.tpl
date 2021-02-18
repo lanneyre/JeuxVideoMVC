@@ -27,7 +27,7 @@
             <div class="PlateformesListing">
                 <!--listingPlateforme-->
             </div>
-            <label for="Jeux_Img">Image</label>
+            <label for="Jeux_Img"><img src="<!--Jeux_Img-->" alt="<!--Jeux_Titre-->"></label>
             <input type="file" name="Jeux_Img" id="Jeux_Img" placeholder="Image" class="form-control">
             <div class="btns">
                 <input type="hidden" name="Jeux_Id" value="<!--Jeux_Id-->">

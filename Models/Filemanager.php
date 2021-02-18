@@ -25,4 +25,9 @@
             }
             return true;
         }
+
+        static function updateimg($img){
+            self::delete($img->Jeux_Id);
+            self::saveimg($img);
+        }
     }
