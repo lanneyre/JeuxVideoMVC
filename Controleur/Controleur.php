@@ -54,4 +54,27 @@
             header("Location: index.php?page=insert");
             exit;
         }
+
+        static function update($id){
+            $jeux = Jeu::getAllJeux();
+            $genres = Genre::getAllGenre();
+            $plateformes = Plateforme::getAllPlateforme();
+            $jeu = new Jeu();
+            $jeu = $jeu->hydrate($id);
+            $vue = new Vues();
+
+            echo $vue->generateView(["jeux"=>$jeux, "genres"=>$genres, "plateformes"=>$plateformes, "jeu" => $jeu], "update");
+        }
+
+        static function updatePOST($data, $files = []){
+            unset($data['action']);
+            $jeuToUpdate = new Jeu();
+            $result = $jeuToUpdate->createJeu($data);
+            if($result === true){
+                $jeuToUpdate->updateJeu();
+            }
+            header("Location: index.php?idToUpdate=".$data["Jeux_Id"]);
+            exit;
+            // var_dump($jeuToUpdate);
+        }
     }

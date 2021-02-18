@@ -69,6 +69,10 @@
             return $saveImg && $bdd;
         }
 
+        public function updateJeu(){
+            $bdd = Database::updateJeu($this);
+        }
+
         static function getAllJeux(){
             return Database::getAll("jeux");
         }
