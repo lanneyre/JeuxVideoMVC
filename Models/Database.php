@@ -106,7 +106,22 @@
                 self::$conn->rollBack();
                 return false;
             }
-            
+        }
 
+        static function delete($id, $table, $champ = null){
+            self::createConnexion();
+            try{
+                if(empty($champ)){
+                    $champ = $table;
+                }
+                $sql = "DELETE FROM `$table` WHERE `".ucfirst($champ)."_Id` = :id";
+                $req = self::$conn->prepare($sql);
+                $req->bindValue(":id", $id);
+                // var_dump($sql);
+                // var_dump(self::$conn->errorInfo() );
+                return  $req->execute();
+            } catch(PDOException $e){
+                return false;
+            }
         }
     }

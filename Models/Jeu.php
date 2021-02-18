@@ -42,9 +42,9 @@
             // return false;
 
             $bdd = Database::createJeu($this);
-            $imgAutorise = ["image/jpeg"];
+            
             $erreurs = [];
-            if(!in_array($this->Jeux_Img["type"], $imgAutorise)){
+            if(!in_array($this->Jeux_Img["type"], Filemanager::$imgAutorise)){
                 $erreurs[] = "Format d'image incorrect !";
             }
             if(isset($this->Jeux_Img["error"]) ){
@@ -75,5 +75,19 @@
 
         function hydrate($id){
             return Database::getJeuById($id);
+        }
+
+        function delete(){
+            $deleteInBddJ = false;
+            $deleteFile = false;
+            $deleteInBddJP = Database::delete($this->Jeux_Id, "jeuxplateforme", "jeux");
+            if($deleteInBddJP){
+                $deleteInBddJ = Database::delete($this->Jeux_Id, "jeux");
+            }
+            if($deleteInBddJP && $deleteInBddJ){
+                $deleteFile = Filemanager::delete($this->Jeux_Id);
+            }
+
+            return $deleteInBddJP && $deleteInBddJ && $deleteFile;
         }
     }

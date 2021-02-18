@@ -3,7 +3,7 @@
 </section>
 <aside class="insertJeux">
     <fieldset>
-        <form action="insert.php" method="post" class="formInsert" enctype="multipart/form-data">
+        <form action="index.php?page=insert" method="post" class="formInsert" enctype="multipart/form-data">
             <label for="Jeux_Titre">Titre</label>
             <input type="text" name="Jeux_Titre" id="Jeux_Titre" placeholder="Titre" class="form-control" required>
             <label for="Jeux_Description">Description</label>

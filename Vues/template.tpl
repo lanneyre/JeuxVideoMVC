@@ -15,7 +15,7 @@
     
 </head>
 <body>
-    <h1>Jeux Vidéo <small><a href="insert.php"><i class="far fa-plus-square"></i></a></small></h1>
+    <h1>Jeux Vidéo <small><a href="index.php?page=insert"><i class="far fa-plus-square"></i></a></small></h1>
     <!--ContentView-->
 </body>
 </html>

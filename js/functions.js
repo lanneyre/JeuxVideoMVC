@@ -24,5 +24,14 @@ window.addEventListener("load", function(){
         selectOtherMonths: true,
         showButtonPanel: true,
         dateFormat: "yy-mm-dd"
-      });
+    });
+    
+    $(".DeleteJeu").each(function(){
+        $(this).click(function(e){
+            e.preventDefault();
+            if(confirm("Voulez-vous vraiment supprimer le jeu ?")){
+                window.location.href = $(this).attr("href");
+            }
+        });
+    });
 });   

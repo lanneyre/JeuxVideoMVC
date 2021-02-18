@@ -3,21 +3,13 @@
     Autoloader::register();
 
     if(!empty($_GET['id'])){
-        $jeu = new Jeu();
-        $jeu = $jeu->hydrate($_GET['id']);
-        if(empty($jeu)){
-            header("Location: index.php?erreur=LejeuNexistePas");
-            exit;
-        }
-        $vue = new Vues();
-
-        echo $vue->generateView($jeu, "jeu");
+        Controleur::getOne($_GET['id']);
+    } elseif(!empty($_GET['idToDelete'])){
+        Controleur::delete($_GET['idToDelete']);
+    } elseif(isset($_POST['action']) && $_POST['action'] == "insert"){
+        Controleur::insertPOST($_POST, $_FILES);
+    } elseif(!empty($_GET['page']) && $_GET['page'] == "insert"){
+        Controleur::insert();
     } else {
-        $jeux = Jeu::getAllJeux();
-        $vue = new Vues();
-
-        echo $vue->generateView($jeux);
+        Controleur::default();
     }
-    
-
-    // var_dump(Database::getPicachu());
